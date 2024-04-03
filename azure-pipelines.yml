@@ -42,6 +42,6 @@ steps:
   displayName: 'Extract .tgz file'
 
 - script: |
-    cd $(Build.ArtifactStagingDirectory)/extracted
+    cd $(Build.ArtifactStagingDirectory)/mypackage
   displayName: 'find the files'
 
