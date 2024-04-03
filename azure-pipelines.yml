@@ -18,17 +18,6 @@ steps:
 - script: |
     npm install
     npm test
-    npm pack
+    ls -l
   displayName: 'npm install and build'
 
-- task: CopyFiles@2
-  inputs:
-    contents: '*.tgz'
-    targetFolder: $(Build.ArtifactStagingDirectory)
-  displayName: 'Copy archives to artifacts staging directory'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'package'
-  displayName: 'Publish artifacts'
