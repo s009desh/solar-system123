@@ -32,4 +32,10 @@ steps:
     path: $(Build.ArtifactStagingDirectory)
     artifact: package
   displayName: 'Publish artifacts'
+- task: ExtractFiles@1
+  inputs:
+    archiveFilePatterns: '*.tgz'
+    destinationFolder: 'mypackage'
+    cleanDestinationFolder: true
+    overwriteExistingFiles: false
 
