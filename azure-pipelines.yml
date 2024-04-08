@@ -13,20 +13,11 @@ steps:
 - script: |
     npm install
     npm run build
-    npm pack
   displayName: 'npm install and build'
-
-- task: ExtractFiles@1
-  inputs:
-    archiveFilePatterns: '*.tgz'
-    destinationFolder: 'mypackage'
-    cleanDestinationFolder: true
-    overwriteExistingFiles: false
-  displayName: 'Extract .tgz file'
 
 - task: CopyFiles@2
   inputs:
-    contents: 'mypackage/**'
+    contents: '**/*.json'
     targetFolder: $(Build.ArtifactStagingDirectory)
   displayName: 'Copy archives to artifacts staging directory'
 
