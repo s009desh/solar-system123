@@ -10,8 +10,6 @@ steps:
     versionSpec: '20'
   displayName: 'Install Node.js'
 
-
-
 - task: CopyFiles@2
   inputs:
     contents: '**/*.json'
@@ -23,5 +21,12 @@ steps:
     path: $(Build.ArtifactStagingDirectory)
     artifact: package
   displayName: 'Publish artifacts'
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'useFeed'
+    vstsFeedPublish: 'e367a5ec-9b68-474f-b8df-f8f83a0eb5d2/81bcbe98-2ed6-484c-b03f-e4c621f9c562'
+    versionOption: 'patch'
 
 
