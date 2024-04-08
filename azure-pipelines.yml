@@ -25,7 +25,7 @@ steps:
   inputs:
     command: 'publish'
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    feedsToUsePublish: 'useFeed'
+    feedsToUsePublish: 'internal'
     vstsFeedPublish: 'e367a5ec-9b68-474f-b8df-f8f83a0eb5d2/81bcbe98-2ed6-484c-b03f-e4c621f9c562'
     versionOption: 'patch'
 
